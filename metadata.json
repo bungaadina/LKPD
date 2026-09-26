@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Digital LKPD",
+  "description": "Platform digital terintegrasi untuk pengelolaan lembar kerja siswa, evaluasi belajar, dan bimbingan karir menuju Perguruan Tinggi Negeri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
