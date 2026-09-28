@@ -125,6 +125,9 @@ export const AdminViews: React.FC = () => {
           if (d.success && d.data.length > 0) {
             setFormGuruWaliNip(d.data[0].nip);
           }
+        })
+        .catch(err => {
+          console.warn('Gagal memuat daftar guru pembimbing:', err);
         });
     }
   }, [activeTab]);

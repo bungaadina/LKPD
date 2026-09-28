@@ -35,6 +35,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           'Authorization': `Bearer ${currentToken}`
         }
       });
+      if (res.status === 401 || res.status === 403) {
+        logout();
+        return;
+      }
       const data = await res.json();
       if (data.success) {
         setUser(data.data);
@@ -43,7 +47,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         logout();
       }
     } catch (err) {
-      logout();
+      console.warn('Gagal menghubungi server LKPD (offline / server booting):', err);
+      // Keep token to allow automatic recovery once server is up.
     } finally {
       setLoading(false);
     }

@@ -29,6 +29,9 @@ export const AuthViews: React.FC = () => {
             setGurus(data.data);
             setSelectedGuruNip(data.data[0].nip);
           }
+        })
+        .catch(err => {
+          console.warn('Gagal memuat daftar guru pembimbing awal:', err);
         });
     }
     clearError();
